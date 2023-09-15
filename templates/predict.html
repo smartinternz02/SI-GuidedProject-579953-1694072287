@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            font: bold 14px/1.4 'Open Sans', arial, sans-serif;
+            background: black;
+            background-image: url('F:/project_new/image/peter-yost-ah9tydIdlKA-unsplash.jpg');
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f900;
+
+        }
+
+        /* Style labels */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Style select elements */
+        select.form-select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            color: black;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        /* Style submit button */
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        /* Style submit button on hover */
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="" style="height: 100vh; width: 100%;">
+        <div class="text-center">
+            <br><br>
+            <h2><strong class="text-danger">PREDICTION</strong></h2>
+            <br><br>
+            <div class="d-flex justify-content-center">
+                <P style="color: white; width: 1000px;">Input the values according to your industry requirements to check if Acoustic fire Extinguisher is useful
+                    in putting the fire out.
+                    NOTE: When selecting Fuel type to be LPG, the Sizes are Full Throttle Setting or Half Throttle Setting.
+                    If any other fuel type is selected Size should be chosen between 7cm - 20cm strictly.</P>
+            </div>
+        </div>
+        <br><br>
+
+        <div class="form-container text-center">
+                <form method="post" action="{{ url_for('predict') }}">
+                    <label for="size">Size </label>
+                    <select class="form-select" name="SIZE" id="size">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <!-- Add more options if needed -->
+                    </select>
+                
+                    <label for="fuel">Fuel </label>
+                    <select class="form-select" name="FUEL" id="fuel">
+                        <option value="Gasoline">Gasoline</option>
+                        <option value="kerosine">kerosine</option>
+                        <option value="thinner">thinner</option>
+                        
+                        <!-- Add more options if needed -->
+                    </select>
+                
+                    <label for="distance">Distance </label>
+                    <select class="form-select" name="DISTANCE" id="distance">
+                        <option value="10">10</option>
+                        <!-- Add more options if needed -->
+                    </select>
+                
+                    <label for="desibel">Desibel </label>
+                    <select class="form-select" name="DESIBEL" id="desibel">
+                        <option value="72">72</option>
+                        <!-- Add more options if needed -->
+                    </select>
+                
+                    <label for="airflow">Airflow </label>
+                    <select class="form-select" name="AIRFLOW" id="airflow">
+                        <option value="5.0">5.0</option>
+                        <!-- Add more options if needed -->
+                    </select>
+                
+                    <label for="frequency">Frequency </label>
+                    <select class="form-select" name="FREQUENCY" id="frequency">
+                        <option value="45">45</option>
+                        <!-- Add more options if needed -->
+                    </select>
+                
+                    <input type="submit" value="PREDICT" class="submit-button">
+                </form>
+                
+        </div>
+    </div>
+</body>
+
+</html>

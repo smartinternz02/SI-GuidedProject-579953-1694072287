@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            font: bold 14px/1.4 'Open Sans', arial, sans-serif;
+            background: #000;
+            background-image: url();
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+            display: table;
+            width: 600px;
+            text-align: center;
+        }
+
+        li {
+            display: table-cell;
+            position: relative;
+            padding: 15px 0;
+        }
+
+        a {
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 0.15em;
+
+            display: inline-block;
+            padding: 15px 20px;
+            position: relative;
+        }
+
+        a:hover{
+            color: red;
+        }
+
+        a:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            background: #fff;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+        }
+
+        a:hover:after {
+            width: 100%;
+            left: 0;
+        }
+
+        @media screen and (max-height: 300px) {
+            ul {
+                margin-top: 40px;
+            }
+        }
+
+        .glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="d-flex justify-content-end" style="position: fixed; right: 0;">
+        <ul>
+            <li><a href="#" class="text-decoration-none">Home</a></li>
+            <li><a href="#about" class="text-decoration-none">About</a></li>
+            <li><a href="#" class="text-decoration-none">Gallery</a></li>
+            <li><a href="#" class="text-decoration-none">Faq</a></li>
+            <li><a href="#" class="text-decoration-none">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="d-flex justify-content-center" style="height: 100vh; align-items: center;">
+        <div class="text-center" style="color: white;">
+            <h1><b>ACOUSTIC</b></h1>
+            <H1><b><span class="text-danger">FIRE</span>  EXTINGUISHER</b></H1>
+            <br>
+            <!-- Your content here -->
+            <button class="glow-on-hover" onclick="window.location.href = '{{ url_for('index') }}';">PREDICT</button>
+        </div>
+
+    </div>
+
+    <div class="container-fluid d-flex justify-content-center" style="height: 300px; background: white; align-items: center;">
+        <div class="row about">
+            <div class="col-sm">
+                <!-- First Column Content -->
+                <h2 style="font-weight: bold; text-align: center;">About The Product </h2>
+                <br>
+                <p style="text-align: center;">The acoustic extinguisher works by using sound waves-a type of pressure wave-to push oxygen away from the source of a flame and spread it over a larger surface area. These actions break the fire combustion triangle made up of heat, fuel, and oxygen, the three elements required for a fire to burn.</p>
+            </div>
+            <div class="col-sm">
+                <!-- Second Column Content -->
+                <h2 style="font-weight: bold; text-align: center;">FREQUENCIES USED</h2>
+                <br>
+                <p style="text-align: center;">35-200 Hz.</p>
+            </div>
+            <div class="col-sm">
+                <!-- Third Column Content -->
+                <h2 style="font-weight: bold; text-align: center;" >FIRE CONTROL</h2>
+                <br>
+                <p style="text-align: center;">Can Control Fires arising from fuels: Thinner, Gasoline, Kerosene, LPG.</p>
+            </div>
+        </div>
+    </div>
+
+ 
+
+
+</body>
+
+</html>
